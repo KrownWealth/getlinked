@@ -22,8 +22,8 @@ export default function Home() {
       <FAQSection /> 
       <TimelineSection />
        <PriceRewardSection />
-     <PartnersSection />
-       <PrivacyTermsSection />
+      <PartnersSection />
+       <PrivacyTermsSection /> 
       <Footer />
 
 

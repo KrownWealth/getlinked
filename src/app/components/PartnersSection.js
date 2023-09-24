@@ -3,21 +3,16 @@ import Image from 'next/image';
 
 export default function PartnersSection() {
   return (
-    <section className="container hero-section flex flex-col 
-      lg:flex-row xl:flex-row 2xl:flex-row py-20 text-center 
+    <section className="container hero-section flex flex-col gap-10 py-20 text-center 
       items-center justify-center border-b-1 ">
+ 
         <h3 className="features-heading font-ClashBold
-           text-white font-bold pt-10 md:hidden lg:hidden">Partners and Sponsers
+           text-white font-bold pt-10 ">Partners and Sponsers
            </h3>
         <p>Getlinked Hackathon 1.0 is honored to have the following major 
 companies as its partners and sponsors
 </p>
-        <div className="intro-img">
-          <Image src="/assets/prices cup.svg" alt="prices cup" width={100} height={100} />
-
-
-        </div>
-        <div className="intro-text grid grid-rows-3">
+        <div className="grid grid-cols-3">
           <div className="silver-medal">
             <Image src="/assets/Liberty company logo white colour.svg" alt="silver medal" width={100} height={100} />
 

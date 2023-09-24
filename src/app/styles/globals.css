@@ -49,6 +49,7 @@
   --primary-color-gradient:linear-gradient(to right, #c03aff, #fe34b9);
   --magenta-purple:#d434fe;
   --black:#000000;
+  --footer-bg:#100b20;
  
 }
 .error {
@@ -187,10 +188,20 @@ body {
 .starpurple-4,
 .starpurple-5,
 
-.star-intro-1{
+
+.star-intro-1,
+.footer-social img{
   position: relative;
   width: 4%;
   height: auto;
+}
+
+.footer-social img{
+  position: relative;
+  width: 100%;
+  top: -20px;
+  left: 80px;
+  gap: 2px;
 }
 
 .purpleFlareImg{
@@ -495,4 +506,20 @@ p.features-text{
   content: "";
   display: table;
   clear: both;
+}
+
+
+/*Privacy section*/
+.privacy-img img{
+  width: 80%;
+}
+.license-policy{
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  border-image: linear-gradient(to right, #c03aff, #fe34b9);
+  border-image-slice: 1;
+  padding: 20px;
+  
+ 
 }
