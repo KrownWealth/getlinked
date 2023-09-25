@@ -421,11 +421,18 @@ sub{
 right: 60px;
 
 }
+
+.intro-img{
+  width: 100%;
+}
+
 .intro-img .arrow-img{
-  width: 20%;
+  position: relative;
+  width: 10%;
   height: auto;
   
 }
+/* 
 .intro-img .star-intro-1,
 .intro-text .star-intro-2,
 .intro-img .star-rules-1,
@@ -433,6 +440,7 @@ right: 60px;
   width: 5%;
   height: auto;
 }
+
 .intro-text .star-intro-2{
   position: relative;
   left: 270px;
@@ -443,10 +451,9 @@ right: 60px;
 .star-hero-1{
   position: relative;
 
-}
+} */
 
-.hero-img img,
-.intro-img img{
+.hero-img img{
   top: 50%;
   width: 100%;
   height: auto;
@@ -469,27 +476,46 @@ right: 60px;
   z-index: 1;
 }
 
+
+
+
 /*Features*/
 h3.features-heading {
   font-size: 1.6rem;
   line-height: 2rem;
 }
 .features-heading span{
-  color: #c03aff;
+  color: var(--light-purple);
+}
+.features-text span{
+  color: var(--magenta-purple);
+  font-weight: bold;
   
 }
 p.features-text{
   font-size: 1rem;
   line-height: 1.8rem;
+  padding-bottom: 1.5rem;
 }
 
-.vertical-timeline-element-content {
-  
-  background: transparent;
-  border-radius: 0;
-  padding: ;
-  text-align: start;
+.vertical-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 18px;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to right, #c03aff, #fe34b9);
   }
+
+  .vertical-timeline-element-content {
+    position: relative;
+    margin-left: 60px;
+    background: transparent !important;
+    border-radius: 0px !important;
+    text-align: start;
+    padding: 1em;
+}
 .vertical-timeline-element-icon{
   width: 30px;
   height: 30px;
@@ -499,7 +525,7 @@ p.features-text{
 }
 
 .vertical-timeline-element-title {
-  color: ;
+  color: var(--light-purple) ;
 }
 
 .vertical-timeline-element-content:after {
@@ -510,16 +536,42 @@ p.features-text{
 
 
 /*Privacy section*/
-.privacy-img img{
-  width: 80%;
+.privacy-img img,
+.prices-img img{
+  width: 100%;
 }
-.license-policy{
+.license-policy,
+.partner-box{
   background: transparent;
   border: 1px solid transparent;
   border-radius: 5px;
   border-image: linear-gradient(to right, #c03aff, #fe34b9);
-  border-image-slice: 1;
+ border-image-slice: 1;
   padding: 20px;
-  
- 
+}
+.partner-box{
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+/* custom width for partner images on medium and larger screen */
+@media (min-width: 640px) {
+  .customWidth {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .customWidth {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .customWidth {
+    width: 100%;
+  }
 }

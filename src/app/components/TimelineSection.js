@@ -54,11 +54,11 @@ export default function TimelineSection() {
         {timelineElements.map((element, index) => (
           <VerticalTimelineElement
             key={index}
-            className="vertical-timeline-element--work"
-            iconStyle={{ color: '#fff', fontSize: '16px' }}
+            className="vertical-timeline-element--work custom-timeline-element"
+            iconStyle={{ color: '#d434fe;', fontSize: '16px', fontWeight:'bold' }}
             icon={<div className="number-icon">{index + 1}</div>}
           >
-            <h3 className="vertical-timeline-element-title">{element.title}</h3>
+            <h3 className="vertical-timeline-element-title custom-timeline-element-title">{element.title}</h3>
             <p>{element.description}</p>
             <p className="text-white">{element.date}</p>
           </VerticalTimelineElement>
