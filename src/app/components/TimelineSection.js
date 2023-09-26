@@ -8,7 +8,7 @@ export default function TimelineSection() {
     {
       date: 'November 18, 2023',
       title: 'Hackathon Announcement',
-      description: ', The getlinked tech hackathon 1.0 is formally announced to the \
+      description: 'The getlinked tech hackathon 1.0 is formally announced to the \
       general public and teams begin to get ready to register',
     },
     {
@@ -55,12 +55,12 @@ export default function TimelineSection() {
           <VerticalTimelineElement
             key={index}
             className="vertical-timeline-element--work custom-timeline-element"
-            iconStyle={{ color: '#d434fe;', fontSize: '16px', fontWeight:'bold' }}
+            iconStyle={{ color: '#ffffff;', fontSize: '20px', fontWeight:'bold' }}
             icon={<div className="number-icon">{index + 1}</div>}
           >
             <h3 className="vertical-timeline-element-title custom-timeline-element-title">{element.title}</h3>
             <p>{element.description}</p>
-            <p className="text-white">{element.date}</p>
+            <p style={{color: '#d434fe'}}>{element.date}</p>
           </VerticalTimelineElement>
         ))}
       </VerticalTimeline>

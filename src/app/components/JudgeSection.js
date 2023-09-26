@@ -6,13 +6,25 @@ import Link from 'next/link';
 export default function JudgeSection() {
   return (
     <section className="container flex flex-col lg:flex-row xl:flex-row 
-    lg:gap-10 2xl:flex-row border-b-2 pb-20 text-start  justify-between">
+    lg:gap-10 2xl:flex-row border-b-2 pb-20 text-center lg:text-start  justify-between">
 
-        <div className="intro-img relative w-full lg:mt-80 lg:w-1/2 items-center justify-center ">
+        <div className="intro-img relative w-full pt-20 lg:pt-80 lg:w-1/2 items-center justify-center ">
+        <span className="flex relative z-10 ">
+          <Image
+            src="/assets/star pu.svg"
+            alt="creativity"
+            width={50}
+            height={50}
+            className="w-5"
+          />
+        </span>
         <Image src="/assets/judging criteria.svg" alt="creativity" width={490} height={477} />
+        
         </div>
         <div className="intro-text w-full lg:w-1/2 lg:pt-[8rem] ">
-        <h3 className="features-heading font-ClashBold
+
+          <div>
+          <h3 className="features-heading font-ClashBold
            text-white font-bold pt-10 pb-10">Judging Criteria <br />
           <span>Key attributes</span>
           </h3>
@@ -53,6 +65,25 @@ export default function JudgeSection() {
           </Link>
         </button>
 
+          </div>
+          <span className="hidden lg:block top-4 left-[-2rem] relative z-10 justify-end items-end">
+          <Image
+            src="/assets/star.svg"
+            alt="creativity"
+            width={50}
+            height={50}
+            className="w-5"
+          />
+        </span>
+          <span className="block lg:hidden top-4 left-5 relative z-10">
+          <Image
+            src="/assets/star.svg"
+            alt="creativity"
+            width={50}
+            height={50}
+            className="w-5"
+          />
+        </span>
           </div>
        </section>
   )

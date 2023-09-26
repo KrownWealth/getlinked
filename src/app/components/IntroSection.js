@@ -5,17 +5,25 @@ import Link from "next/link"
 export default function IntroSection() {
   return (
     <section className="container flex flex-col lg:flex-row xl:flex-row 
-    lg:gap-10 2xl:flex-row border-b-2 pb-20 text-start  justify-between">
+    lg:gap-10 2xl:flex-row border-b-2 pb-20 text-center lg:text-start  justify-between">
 
         <div className="intro-img relative w-full top-10 lg:w-1/2 items-center justify-center ">
        
-          <Image src="/assets/big-idea.svg" alt="creativity" width={490} height={477} className="big-idea " />
-          <Image src="/assets/arrow.svg" alt="arrow" width={50} height={50} 
-          className="arrow-img  lg:left-[28rem] lg:top-[-4rem]"/>
+       <span className="relative top-[9rem] left-[2rem] lg:top-[10rem] lg:left-0">
+       <Image src="/assets/star pu.svg" alt="creativity" width={50} height={50} className="w-5" />
           
+
+       </span>
+          <Image src="/assets/big-idea.svg" alt="creativity" width={490} height={477} className="big-idea " />
+          
+          <span className="relative left-[10rem] lg:left-[28rem] lg:top-[-4rem]">
+            <Image src="/assets/arrow.svg" alt="arrow" width={50} height={50} 
+          className="arrow-img "/>
+          </span>
         </div>
 
-        <div className="intro-text w-full lg:w-1/2 lg:pt-[8rem] ">
+        <div className="intro-text w-full pt-[2rem] lg:w-1/2 lg:pt-[8rem]  ">
+        
         <h3 className="features-heading font-ClashBold
            text-white font-bold pt-10 pb-10">Introduction to getlinked <br />
           <span>tech Hackathon 1.0</span>
