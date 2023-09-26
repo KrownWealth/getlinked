@@ -60,9 +60,18 @@ export default function RegisterForm({ onSubmit }) {
   };
 
   return (
-    <div className="inputField pt-5 md:border border">
+    <div className="inputField pt-5 w-full lg:p-10 md:border border">
+      <span className="relative z-5 flex justify-end items-end">
+          <Image
+            src="/assets/star gray.svg"
+            alt="creativity"
+            width={50}
+            height={50}
+            className="w-5"
+          />
+        </span>
       <h3 style={{ color: magentaPurple }} 
-      className="font-ClashBold text-2xl font-bold pb-5 sm:hidden ">
+      className="font-ClashBold text-2xl font-bold pb-5 hidden lg:block ">
         Register  
         </h3>
     
@@ -161,6 +170,24 @@ export default function RegisterForm({ onSubmit }) {
           Register
         </button>
         </form>
+        <span className="relative z-5 top-[-4rem] lg:left-[-6rem]">
+          <Image
+            src="/assets/star pu.svg"
+            alt="creativity"
+            width={50}
+            height={50}
+            className="w-5"
+          />
+        </span>
+      <span className="relative z-5 top-[-8rem] left-[20rem] lg:left-[28rem] lg:top-[4rem]">
+          <Image
+            src="/assets/star.svg"
+            alt="creativity"
+            width={50}
+            height={50}
+            className="w-5"
+          />
+        </span>
       </div>
   );
 }

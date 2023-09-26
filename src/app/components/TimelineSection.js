@@ -58,7 +58,8 @@ export default function TimelineSection() {
             iconStyle={{ color: '#ffffff;', fontSize: '20px', fontWeight:'bold' }}
             icon={<div className="number-icon">{index + 1}</div>}
           >
-            <h3 className="vertical-timeline-element-title custom-timeline-element-title">{element.title}</h3>
+            <h3 className="vertical-timeline-element-title cus
+            tom-timeline-element-title">{element.title}</h3>
             <p>{element.description}</p>
             <p style={{color: '#d434fe'}}>{element.date}</p>
           </VerticalTimelineElement>

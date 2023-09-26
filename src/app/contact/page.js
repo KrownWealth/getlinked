@@ -36,65 +36,18 @@ export default function Page({ setActiveLink }) {
     }
   };
   return (
-    <section className="container contact-section 
-    sm:px-40 px-8 py-10 z-10 ">
-      <div className="flareImgContainer">
-        <Image
-          src="/assets/Purple-Lens-Flare-PNG.svg"
-          alt="purple lens"
-          width={100}
-          height={100}
-          className="purpleFlareImg sm:hidden"
-        />
-          <Image
-          src="/assets/Purple-Lens-Flare-PNG.svg"
-          alt="purple lens"
-          width={100}
-          height={100}
-          className="purpleFlareImg-2 xl:hidden"
-        />
-      
-          <Image
-          src="/assets/star gray.svg"
-          alt="purple lens"
-          width={50}
-          height={50}
-          className="stargray sm:hidden"
-        />
-        <Image
-          src="/assets/star pu.svg"
-          alt="purple lens"
-          width={50}
-          height={50}
-          className="starpurple sm:hidden"
-        />
-                <Image
-          src="/assets/star gray.svg"
-          alt="purple lens"
-          width={50}
-          height={50}
-          className="stargray-2 xl:hidden"
-        />
-                  <Image
-          src="/assets/star pu.svg"
-          alt="purple lens"
-          width={50}
-          height={50}
-          className="starpurple-3 xl:hidden"
-        />
-
-      </div>
-      <div className="close-btn sm:hidden">
+    <section className="container contact-section py-10 z-10 ">
+      <div className="close-btn lg:hidden block">
         <button className="direct-arrow">
         <Link href="/" onClick={() => setActiveLink("/")}>
         <IoIosArrowBack className="font-bold text-white" />
           </Link>
           </button>
       </div>
-      <div className="sm:flex sm:flex-row sm:justify-between sm:mt-10">
-      <div className="contactText md:mt-40 md:marker:w-2/5">
+      <div className="flex flex-row justify-between ">
+        <div className="hidden lg:block contactText lg:mt-40 lg:marker:w-2/5">
         {/**Desktop contact text */}
-        <div className="xl:hidden flex flex-col text-base">
+        <div className="hidden lg:flex flex-col text-base">
         <h3 style={{ color: lightPurpleColor }}
         className="font-ClashBold text-3xl font-bold pb-8"
         >Get in touch</h3>
@@ -134,45 +87,19 @@ export default function Page({ setActiveLink }) {
         </div>
 
         {/**Mobile contact text */}
+        <div className="lg:hidden block">
         <p style={{ color: lightPurpleColor }}
-        className="font-ClashBold text-2xl font-bold pb-5 sm:hidden"
+        className="font-ClashBold text-2xl font-bold pb-5"
         >Questions or need <br /> assistance? <br />
         Let us know about it</p>
-        <p className="email-us-text font-bold-400 text-white sm:hidden">Email us below for any questions related to our event</p>
-      
+       
+        </div>
       </div>
       <ContactForm onSubmit={handleSubmit} />
       </div>
       <MobileFooter lightPurpleColor={lightPurpleColor} />
 
-      <Image
-          src="/assets/star.svg"
-          alt="purple lens"
-          width={50}
-          height={50}
-          className="starwhite sm:hidden"
-        />
-        <Image
-          src="/assets/star pu.svg"
-          alt="purple lens"
-          width={50}
-          height={50}
-          className="starpurple-2 sm:hidden"
-        />
-              <Image
-          src="/assets/star.svg"
-          alt="purple lens"
-          width={50}
-          height={50}
-          className="starwhite-2 xl:hidden"
-        />
-        <Image
-          src="/assets/star pu.svg"
-          alt="purple lens"
-          width={50}
-          height={50}
-          className="starpurple-4 xl:hidden"
-        />
+      
       
     </section>
 
