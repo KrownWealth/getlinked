@@ -16,9 +16,11 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
+      <div id="overview">
       <IntroSection />
        <RulesandRegSection />
       <JudgeSection />
+      </div>
       <FAQSection /> 
       <TimelineSection />
        <PriceRewardSection />

@@ -40,13 +40,13 @@ export default function Header() {
       </div>
 
       <div className="hidden lg:flex xl:flex 2xl:flex items-center justify-center gap-12 text-base">
-        <Link href="/" onClick={() => setActiveLink("/")}>
+        <Link href="#timeline" onClick={() => setActiveLink("/")}>
           Timeline
         </Link>
-        <Link href="/overview" onClick={() => setActiveLink("/overview")}>
+        <Link href="#overview" onClick={() => setActiveLink("/overview")}>
           Overview
         </Link>
-        <Link href="/faq" onClick={() => setActiveLink("/faq")}>
+        <Link href="#faq" onClick={() => setActiveLink("/faq")}>
           FAQs
         </Link>
         <Link href="/contact" onClick={() => setActiveLink("/contact")}>
@@ -70,32 +70,32 @@ export default function Header() {
           </div>
           <div className="flex flex-col font-bold items-start p-7 text-base">
             <Link
-              href="/"
+              href="#timeline"
               onClick={() => {
-                setActiveLink("/");
+                setActiveLink("#timeline");
                 closeMobileMenu();
               }}
-              className={`my-2 ${activeLink === "/" && "active"}`}
+              className={`my-2 ${activeLink === "#timeline" && "active"}`}
             >
               Timeline
             </Link>
             <Link
-              href="/overview"
+              href="#overview"
               onClick={() => {
-                setActiveLink("/overview");
+                setActiveLink("#timeline");
                 closeMobileMenu();
               }}
-              className={`my-2 ${activeLink === "/overview" && "active"}`}
+              className={`my-2 ${activeLink === "#overview" && "active"}`}
             >
               Overview
             </Link>
             <Link
-              href="/faq"
+              href="#faq"
               onClick={() => {
-                setActiveLink("/faq");
+                setActiveLink("#faq");
                 closeMobileMenu();
               }}
-              className={`my-2 ${activeLink === "/faq" && "active"}`}
+              className={`my-2 ${activeLink === "#faq" && "active"}`}
             >
               FAQs
             </Link>

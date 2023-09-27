@@ -38,7 +38,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section
+    <section id="faq"
       className="container flex flex-col lg:flex-row xl:flex-row 
     lg:gap-10 2xl:flex-row border-b-2 pb-20  text-center lg:text-start  justify-between"
     >
