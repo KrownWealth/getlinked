@@ -4,6 +4,8 @@ Welcome to the GetLinked Hackathon 1.0 challenge! The goal of this hackathon pro
 
 "GetLinked" itself is a platform that uses artificial intelligence to connect job seekers with employers and vice versa.
 
+![getlinked-Linked-Talents-and-Recruiters](https://github.com/KrownWealth/getlinked/assets/100444940/b0ff43a1-a698-42db-a895-15281f366acb)[(Click here to view the landing page)](https://getlinked-beta.vercel.app)
+
 ## Project Objective
 
 The main objective of this project is to build a functional landing page as per the provided Figma design. The landing page effectively represent GetLinked's platform, showcasing different sections to provide users with an overview of the platform's features, rules, timeline, rewards, and more.
