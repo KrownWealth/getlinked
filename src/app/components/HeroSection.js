@@ -72,7 +72,7 @@ export default function HeroSection() {
         <button className="cta-btn font-montserat font-base ">
           <Link href="/register">Register</Link>
         </button>
-        <span className="relative top-[-2rem]  left-[18rem] lg:left-[19rem] ">
+        <span className="relative top-[-2rem]  left-[18rem] lg:left-[24rem] ">
        <Image src="/assets/star.svg" alt="creativity" width={50} height={50} className="w-5" />
         </span>
         <div className="counter grid grid-cols-3 gap-2 lg:items-start lg:justify-start pt-[2rem] lg:pt-[5rem]">
