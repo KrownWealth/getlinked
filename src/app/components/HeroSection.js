@@ -12,6 +12,7 @@ export default function HeroSection() {
        border-b-2 "
     >
       <div className="hero-text pb-10 lg:justify-center lg:items-center">
+         {/**Text for mobile */}
         <div className="block md:hidden lg:hidden pb-4">
         <p className="font-montserat text-white italic relative z-2 md:text-3xl lg:text-3xl">
           Igniting a Revolution in HR Innovation <br />
@@ -25,8 +26,14 @@ export default function HeroSection() {
               style={{width: '40%' }}
             />
           </span>
+          <span className="relative  left-[5rem] lg:aria-hidden:">
+       <Image src="/assets/star.svg" alt="creativity" width={50} height={50} className="w-5" />
+        </span>
+        <span className="relative top-[-1rem] left-[15rem] lg:hidden">
+       <Image src="/assets/star gray.svg" alt="creativity" width={50} height={50} className="w-5" />
+        </span>
         </div>
-
+        <div>
         <span className="flex justify-end items-end">
           <Image
             src="/assets/creatice light.svg"
@@ -60,9 +67,14 @@ export default function HeroSection() {
           Participate in getlinked tech Hackathon <br /> 2023 stand a chance to
           win a big price
         </p>
-        <button className="lg:flex cta-btn font-montserat lg:text-center font-base mx-auto lg:ml-0">
+        </div>
+         {/**Text for mobile ends */}
+        <button className="cta-btn font-montserat font-base ">
           <Link href="/register">Register</Link>
         </button>
+        <span className="relative top-[-2rem]  left-[18rem] lg:left-[19rem] ">
+       <Image src="/assets/star.svg" alt="creativity" width={50} height={50} className="w-5" />
+        </span>
         <div className="counter grid grid-cols-3 gap-2 lg:items-start lg:justify-start pt-[2rem] lg:pt-[5rem]">
           <h2>
             00<sub>H</sub>
