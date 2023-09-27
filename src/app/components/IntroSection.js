@@ -11,9 +11,7 @@ export default function IntroSection() {
        
        <span className="relative top-[9rem] left-[2rem] lg:top-[10rem] lg:left-0">
        <Image src="/assets/star pu.svg" alt="creativity" width={50} height={50} className="w-5" />
-          
-
-       </span>
+        </span>
           <Image src="/assets/big-idea.svg" alt="creativity" width={490} height={477} className="big-idea " />
           
           <span className="relative left-[10rem] lg:left-[28rem] lg:top-[-4rem]">
