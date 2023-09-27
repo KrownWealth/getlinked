@@ -46,7 +46,6 @@ export default function TimelineSection() {
     <section id="" className="container intro-section py-20 text-center">
       <div className="intro-text">
         <h3 className="features-heading font-ClashBold text-white font-bold pt-10">Timeline</h3>
-        <Image src="/assets/star.svg" alt="purple lens" width={50} height={50} className="star-intro-2" />
         <p>Here is the breakdown of the time we
  anticipate using for the upcoming event.</p>
       </div>

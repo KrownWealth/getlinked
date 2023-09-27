@@ -3,24 +3,35 @@ import React from 'react';
 import Image from 'next/image';
 import RegisterForm from '../components/RegisterForm';
 
-export default function page() {
+
+export default function page({ setShowModal }) {
   const magentaPurple="#d434fe"
 
+ 
+
   const handleUserRegister = async (registerData, errors) => {
+    
     if (Object.keys(errors).length === 0) {
       try {
+        const { privacy_poclicy_accepted, ...dataForApi } = registerData;
+      const dataToSend = {
+        ...dataForApi,
+        privacy_poclicy_accepted: privacy_poclicy_accepted
+      };
+
         const response = await fetch("https://backend.getlinked.ai/hackathon/registration", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(registerData),
+          body: JSON.stringify(dataToSend),
         });
-        
+              
 
         if (response.ok) {
           const responseData = await response.json();
-          console.log('Form submitted successfully');
+          // setShowModal(true);
+          // console.log('Form submitted successfully');
           console.log('Response Data:', responseData);
         } else {
           console.error('Form submission failed');
@@ -67,6 +78,7 @@ export default function page() {
        
         <div className="flex w-full lg:w-3/5">
           <RegisterForm onSubmit={handleUserRegister} />
+         
         </div>
     </section>
   )

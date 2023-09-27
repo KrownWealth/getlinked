@@ -23,9 +23,9 @@ export default function Header() {
     <div className="container flex items-center 
     justify-between border-b-2 py-2 sm:py-4 h-24">
       <div className="font-ClashBold">
-        <h1 className="font-bold text-2xl lg:text-3xl">
+        <Link href="/"><h1 className="font-bold text-2xl lg:text-3xl">
           get<span style={{ color: magentaPurpleColor }}>linked</span>
-        </h1>
+        </h1></Link>
       </div>
 
       <div className="sm:block md:block lg:hidden xl:hidden 2xl:hidden">

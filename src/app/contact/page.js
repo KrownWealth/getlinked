@@ -6,6 +6,7 @@ import { IoIosArrowBack } from "react-icons/io"
 import ContactForm from '../components/ContactForm';
 import MobileFooter from '../components/MobileFooter';
 
+
 export default function Page({ setActiveLink }) {
   const lightPurpleColor = "#903aff"
 
@@ -13,7 +14,8 @@ export default function Page({ setActiveLink }) {
     if (Object.keys(errors).length === 0) {
       try {
         const response = await fetch("https://backend.getlinked.ai/hackathon/contact-form", {
-          method: 'POST',
+         
+        method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
@@ -23,8 +25,9 @@ export default function Page({ setActiveLink }) {
 
         if (response.ok) {
           const responseData = await response.json();
-          console.log('Form submitted successfully');
-          console.log('Response Data:', responseData);
+          window.alert("Your message has been sent");
+          // console.log('Form submitted successfully');
+          // console.log('Response Data:', responseData);
         } else {
           console.error('Form submission failed');
         }

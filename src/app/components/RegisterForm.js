@@ -2,52 +2,79 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Modal from '../components/Modal';
 
 export default function RegisterForm({ onSubmit }) {
   const magentaPurple = "#d434fe";
   const [errors, setErrors] = useState({});
-  const [registerData, setRegisterData] = useState({
+  const [showModal, setShowModal] = useState(false);
+ 
+  
+  const [registerData , setRegisterData] = useState ({
+    email:"",
+    phone_number: "",
     team_name: "",
-    project_topic: "",
-    phone_number: 0,
-    email: "",
-    category: 0,
-    group_size: 0
-  });
+    group_size: "",
+    project_topic:"",
+    category: "",
+    privacy_poclicy_accepted: false
+    });
+  
+
 
   const handleRegisterChange = (e) => {
     const { name, value } = e.target;
     let updatedValue = value;
     let updatedErrors = { ...errors };
-
+  
     if (name === 'team_name') {
       if (value.length < 3 || !/^[a-zA-Z]+$/.test(value)) {
         updatedErrors[name] = 'Team Name must be at least 3 characters long and contain only letters.';
       } else {
         delete updatedErrors[name];
       }
-    } else if (name === 'phone_number') {
-      const phoneRegex = /^\d{10}$/;
-      if (!phoneRegex.test(value)) {
+    } 
+    else if (name === 'phone_number') {
+      const phoneRegex = /^0\d{10}$/;
+      if (!value.startsWith('0')) {
+        updatedValue = '0' + value;
+      }if (!phoneRegex.test(updatedValue)) {
         updatedErrors[name] = 'Invalid Phone format.';
       } else {
         delete updatedErrors[name];
+        updatedValue = parseInt(updatedValue, 10);
       }
     } else if (name === 'email') {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(value)) {
+      if (!emailRegex.test(value.trim())) {
         updatedErrors[name] = 'Invalid email format.';
       } else {
         delete updatedErrors[name];
       }
+    } else if (name === 'privacy_policy_accepted') {
+      if (!registerData.privacy_policy_accepted) {
+        updatedErrors[name] = 'Accept our privacy check';
+      } else {
+        delete updatedErrors[name];
+      }
+      
+    } else if (name === 'group_size' || name === 'category') {
+      updatedValue = parseInt(e.target.value, 10);  
+      if (isNaN(updatedValue) || updatedValue < 1) {  
+        updatedErrors[name] = 'Please select';
+      } else {
+        delete updatedErrors[name];
+      }
     }
-
+  
+  
     setRegisterData({
       ...registerData,
       [name]: updatedValue,
     });
     setErrors(updatedErrors);
   };
+  
 
   const handleRegisterSubmit = (e) => {
     e.preventDefault();
@@ -57,6 +84,19 @@ export default function RegisterForm({ onSubmit }) {
     } else {
       console.log('Form has errors. Please correct them before submitting.');
     }
+  };
+
+  const handleCheckboxChange = (e) => {
+    console.log('Checkbox checked:', e.target.checked);
+    const { checked } = e.target;
+    setRegisterData((prevData) => ({
+      ...prevData,
+      privacy_poclicy_accepted: checked
+    }));
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -99,7 +139,7 @@ export default function RegisterForm({ onSubmit }) {
 
             <label htmlFor="phone" className="pb-2">Phone</label>
             <input
-              type="phone"
+              type="tel"
               placeholder="Enter your phone number"
               name="phone_number"
               value={registerData.phone_number}
@@ -131,26 +171,36 @@ export default function RegisterForm({ onSubmit }) {
           </div> 
           <div className="flex flex-col lg:-mt-3">
             <label htmlFor="category" className="pb-2">Category</label>
-            <select name="category" id="category" className="bg-transparent">
-            <option value="Select your category" selected>Select your category</option>
-            <option value="1">1</option>
-            <option value="1">2</option>
-            <option value="1">3</option>
-            <option value="1">4</option>
-            <option value="1">5</option>
+            <select
+  value={registerData.category}
+  onChange={(e) => handleRegisterChange(e)}
+  name="category"
+  id="category"
+  className="bg-transparent"
+>
+  <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
             </select>
             {errors.category && <div className="error">{errors.category}</div>}
         
             </div>
             <div className="flex flex-col lg:last:-mt-3">
             <label htmlFor="group_size" className="pb-2">Group Size</label>
-            <select name="group_size" id="group_size" className="bg-transparent">
-            <option value="Select your category" selected>Select your category</option>
+            <select
+  value={registerData.group_size}
+  onChange={(e) => handleRegisterChange(e)}
+  name="group_size"
+  id="group_size"
+  className="bg-transparent"
+>
             <option value="1">1</option>
-            <option value="1">2</option>
-            <option value="1">3</option>
-            <option value="1">4</option>
-            <option value="1">5</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
             </select>
             {errors.group_size && <div className="error">{errors.group_size}</div>}
           
@@ -158,17 +208,24 @@ export default function RegisterForm({ onSubmit }) {
           
           </div>
     <p className="confirm pb-2">Please review your registration details before submitting</p>
-        <div className="checkbox-container">
-  <input type="checkbox" id="termsCheckbox" className="checkbox gap-2" />
-  <label htmlFor="termsCheckbox" className="checkboxlabel" >
-    I agree with the event 
+    <div className="checkbox-container">
+  <input
+    type="checkbox"
+    id="termsCheckbox"
+    className="checkbox gap-2"
+    checked={registerData.privacy_poclicy_accepted}
+    onChange={handleCheckboxChange}
+  />
+  <label htmlFor="termsCheckbox" className="checkboxlabel">
+    {registerData.privacy_poclicy_accepted ? '✓ ' : ''} I agree with the event{" "}
     <Link href="/termsandcondition">terms and conditions</Link> and{" "}
     <Link href="/privacypolicy">privacy policy</Link>
   </label>
-  </div>
+</div>
   <button type="submit" className="cta-btn mt-5 mx-auto w-5">
           Register
         </button>
+        {showModal && <Modal closeModal={closeModal} />}
         </form>
         <span className="relative z-5 top-[-4rem] lg:left-[-6rem]">
           <Image
