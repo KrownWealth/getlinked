@@ -54,7 +54,7 @@ export default function TimelineSection() {
           <VerticalTimelineElement
             key={index}
             className="vertical-timeline-element--work custom-timeline-element"
-            iconStyle={{ color: '#ffffff;', fontSize: '20px', fontWeight:'bold' }}
+            iconStyle={{ color: '#ffffff', fontSize: '20px', fontWeight:'bold' }}
             icon={<div className="number-icon">{index + 1}</div>}
           >
             <h3 className="vertical-timeline-element-title cus

@@ -13,18 +13,13 @@ export default function page({ setShowModal }) {
     
     if (Object.keys(errors).length === 0) {
       try {
-        const { privacy_poclicy_accepted, ...dataForApi } = registerData;
-      const dataToSend = {
-        ...dataForApi,
-        privacy_poclicy_accepted: privacy_poclicy_accepted
-      };
-
+    
         const response = await fetch("https://backend.getlinked.ai/hackathon/registration", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(dataToSend),
+          body: JSON.stringify(registerData),
         });
               
 
@@ -34,7 +29,7 @@ export default function page({ setShowModal }) {
           // console.log('Form submitted successfully');
           console.log('Response Data:', responseData);
         } else {
-          console.error('Form submission failed');
+          console.error('Form submission failed', error);
         }
       } catch (error) {
         console.error('Error submitting form:', error);

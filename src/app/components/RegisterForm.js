@@ -14,10 +14,10 @@ export default function RegisterForm({ onSubmit }) {
     email:"",
     phone_number: "",
     team_name: "",
-    group_size: "",
     project_topic:"",
+    group_size: "",
     category: "",
-    privacy_poclicy_accepted: false
+    privacy_policy_accepted: false
     });
   
 
@@ -58,9 +58,9 @@ export default function RegisterForm({ onSubmit }) {
         delete updatedErrors[name];
       }
       
-    } else if (name === 'group_size' || name === 'category') {
-      updatedValue = parseInt(e.target.value, 10);  
-      if (isNaN(updatedValue) || updatedValue < 1) {  
+    }  else if (name === 'group_size' || name === 'category') {
+      updatedValue = value ? parseInt(value, 10) : null;
+      if (isNaN(updatedValue) || updatedValue < 1) {
         updatedErrors[name] = 'Please select';
       } else {
         delete updatedErrors[name];
@@ -91,7 +91,7 @@ export default function RegisterForm({ onSubmit }) {
     const { checked } = e.target;
     setRegisterData((prevData) => ({
       ...prevData,
-      privacy_poclicy_accepted: checked
+      privacy_policy_accepted: checked
     }));
   };
 
@@ -213,11 +213,11 @@ export default function RegisterForm({ onSubmit }) {
     type="checkbox"
     id="termsCheckbox"
     className="checkbox gap-2"
-    checked={registerData.privacy_poclicy_accepted}
+    checked={registerData.privacy_policy_accepted}
     onChange={handleCheckboxChange}
   />
   <label htmlFor="termsCheckbox" className="checkboxlabel">
-    {registerData.privacy_poclicy_accepted ? '✓ ' : ''} I agree with the event{" "}
+    {registerData.privacy_policy_accepted ? '✓ ' : ''} I agree with the event{" "}
     <Link href="/termsandcondition">terms and conditions</Link> and{" "}
     <Link href="/privacypolicy">privacy policy</Link>
   </label>

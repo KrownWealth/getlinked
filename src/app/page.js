@@ -25,7 +25,7 @@ export default function Home() {
       <TimelineSection />
        <PriceRewardSection />
       <PartnersSection />
-       <PrivacyTermsSection /> 
+       <PrivacyTermsSection />
       <Footer />
 
 

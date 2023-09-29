@@ -1,6 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import BackToTop from "./BackToTop";
+
+
 
 export default function Footer() {
   const magentaPurpleColor = "#d434fe";
@@ -15,17 +18,19 @@ export default function Footer() {
           <div className="w-5 relative lg:top-12 lg:-left-12">
             <Image src="/assets/star.svg" alt="star white" width={10} height={10} />
           </div>
+            <Link href="/">
             <h1 className="font-ClashBold font-bold text-2xl lg:text-3xl">
               get<span style={{ color: magentaPurpleColor }}>linked</span>
             </h1>
+            </Link>
             <p>
               Getlinked Tech Hackathon is a technology innovation program
               established by a group of organizations with the aim of showcasing
               young and talented individuals in the field of technology
             </p>
             <div className="flex flex-row">
-              <p>Terms of Use</p>
-              <p>Privacy Policy</p>
+              <Link href="">Terms of Use</Link>
+              <Link href="">Privacy Policy</Link>
             </div>
           </div>
          
@@ -42,13 +47,13 @@ export default function Footer() {
             </h3>
             <ul className="flex flex-col">
               <li>
-                <Link href="/overview">Overview</Link>
+                <Link href="#overview">Overview</Link>
               </li>
               <li>
-                <Link href="/timeline">Timeline</Link>
+                <Link href="#timeline">Timeline</Link>
               </li>
               <li>
-                <Link href="faq">FAQs</Link>
+                <Link href="#faq">FAQs</Link>
               </li>
               <li>
                 <Link href="/register">Register</Link>
@@ -60,7 +65,7 @@ export default function Footer() {
                 </Link>
                 <ul className="flex ml-4 gap-2">
                   <li className="footer-social">
-                    <Link href="">
+                    <Link href="https://instagram.com/getlinked.ai?igshid=NTc4MTIwNjQ2YQ==">
                       <Image
                         src="/assets/insta logo.svg"
                         alt=""
@@ -70,7 +75,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li className="footer-social">
-                    <Link href="">
+                    <Link href="https://twitter.com/getLinkedai">
                       <Image
                         src="/assets/Twitter logo.svg"
                         alt=""
@@ -80,7 +85,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li className="footer-social">
-                    <Link href="">
+                    <Link href="https://www.facebook.com/getLinkedai">
                       <Image
                         src="/assets/facebook logo.svg"
                         alt=""
@@ -90,7 +95,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li className="footer-social">
-                    <Link href="">
+                    <Link href="https://www.linkedin.com/company/getlinked-ai/">
                       <Image
                         src="/assets/linkedin logo.svg"
                         alt=""
@@ -141,14 +146,12 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      
-  
               {/* Column 4 */}
       <div className="container mx-auto items-center justify-center">
       
         <p className="text-center ">All right reserved.&copy; getlinked Ltd.</p>
       </div>
+      <BackToTop /> 
     </footer>
   );
 }

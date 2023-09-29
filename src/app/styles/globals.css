@@ -104,6 +104,8 @@ button.cta-register {
   padding: 10px;
 }
 
+
+
 .direct-arrow {
   margin-top: 0;
   top: -100px;
@@ -454,6 +456,26 @@ p.features-text{
   flex-direction: column;
 }
 
+/*Back to Top*/
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+}
 
 
 /* custom width for partner images on medium and larger screen */
