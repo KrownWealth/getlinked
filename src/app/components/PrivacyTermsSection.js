@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { BsCheckCircleFill } from 'react-icons/bs'
 
 export default function PrivacyTermsSection() {
   const magentaPurpleColor = "#d434fe";
@@ -19,16 +20,20 @@ export default function PrivacyTermsSection() {
             Below are our privacy & policy, which outline a lot of goodies. it&apos;s our aim to always take care of our participant.
           </p>
 
-          <div className="license-policy mt-4 text-start">
+          <div className="license-policy py-10 text-start">
             <p className="pb-5">
               At getlinked tech Hackathon 1.0, we value your privacy and are committed to protecting your personal information. This Privacy Policy outlines how we collect, use, disclose, and safeguard your data when you participate in our tech Hackathon event. By participating in our event, you consent to the practices described in this policy.
             </p>
             <h3 className="pb-4" style={{ color: magentaPurpleColor }}>Licensing Policy</h3>
             <p className="font-bold text-white pb-10">Here are terms of our Standard License</p>
-            <ul className="pb-5">
-              <li>The Standard License grants you a non-exclusive right to navigate and register for our event</li>
-              <li>You are licensed to use the item available at any free source sites, for your project development.</li>
-            </ul>
+            <div className="flex pb-5 ">
+               <BsCheckCircleFill className="check-mark" />
+              <p className="ml-2">The Standard License grants you a non-exclusive right to navigate and register for our event</p>
+              </div>
+              <div className="flex pb-10 ">
+              <BsCheckCircleFill className="check-mark" />
+              <p className="ml-2"> You are licensed to use the item available at any free source sites, for your project development.</p>
+            </div>
             <button className="flex cta-btn font-montserat font-base items-center justify-center">
               <Link href="/register" className="">
                 Read More

@@ -7,7 +7,7 @@ import ContactForm from '../components/ContactForm';
 import MobileFooter from '../components/MobileFooter';
 
 
-export default function Page({ setActiveLink }) {
+export default function Contact ({ setActiveLink }) {
   const lightPurpleColor = "#903aff"
 
   const handleSubmit = async (formData, errors) => {

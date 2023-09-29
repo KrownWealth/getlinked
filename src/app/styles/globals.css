@@ -250,18 +250,45 @@ option {
 }
 
 /*Modal popup on successful sign in*/
-.modal{
+.modal {
   background: transparent;
   border: 1px solid transparent;
   border-radius: 5px;
   border-image: linear-gradient(to right, #c03aff, #fe34b9);
   border-image-slice: 1;
   padding: 10px;
-  text-align: center;
+  width: 80%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
   align-items: center;
   justify-content: center;
- 
+  text-align: center;
 }
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-mark{
+  color:#2de100;
+  font-size: 2rem;
+
+
+}
+
 
 .registerImg{
   width: 100%;
@@ -450,10 +477,15 @@ p.features-text{
  border-image-slice: 1;
   padding: 20px;
 }
-.partner-box{
+/* .partner-box{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+} */
+
+.partnerImg{
+
 }
 
 /*Back to Top*/
@@ -497,6 +529,9 @@ p.features-text{
 @media (min-width: 1024px) {
   .customWidth {
     width: 100%;
+  }
+  .modal{
+    width: 50%;
   }
 }
 @media only screen and (min-width: 1170px){ 

@@ -2,14 +2,12 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Modal from '../components/Modal';
 
-export default function RegisterForm({ onSubmit }) {
+export default function RegisterForm({ onSubmit, setShowModal }) {
   const magentaPurple = "#d434fe";
   const [errors, setErrors] = useState({});
-  const [showModal, setShowModal] = useState(false);
- 
   
+
   const [registerData , setRegisterData] = useState ({
     email:"",
     phone_number: "",
@@ -19,9 +17,8 @@ export default function RegisterForm({ onSubmit }) {
     category: "",
     privacy_policy_accepted: false
     });
-  
 
-
+    //Validation for correct data type as user type
   const handleRegisterChange = (e) => {
     const { name, value } = e.target;
     let updatedValue = value;
@@ -60,7 +57,7 @@ export default function RegisterForm({ onSubmit }) {
       
     }  else if (name === 'group_size' || name === 'category') {
       updatedValue = value ? parseInt(value, 10) : null;
-      if (isNaN(updatedValue) || updatedValue < 1) {
+      if (isNaN(updatedValue) || updatedValue < 0) {
         updatedErrors[name] = 'Please select';
       } else {
         delete updatedErrors[name];
@@ -76,16 +73,20 @@ export default function RegisterForm({ onSubmit }) {
   };
   
 
+  //Validation for that all fields are filled
   const handleRegisterSubmit = (e) => {
     e.preventDefault();
-
-    if (Object.keys(errors).length === 0) {
-      onSubmit(registerData, errors);
+    const hasEmptyFields = Object.values(registerData).some(value => value === '');
+    if (hasEmptyFields) {
+      console.log('All fields must be filled.');
+      setErrors({ allFields: 'All fields must be filled.' });
     } else {
-      console.log('Form has errors. Please correct them before submitting.');
+      setErrors({});
+      onSubmit(registerData, {});
+      setShowModal(true);
     }
   };
-
+ 
   const handleCheckboxChange = (e) => {
     console.log('Checkbox checked:', e.target.checked);
     const { checked } = e.target;
@@ -95,9 +96,7 @@ export default function RegisterForm({ onSubmit }) {
     }));
   };
 
-  const closeModal = () => {
-    setShowModal(false);
-  };
+  
 
   return (
     <div className="inputField pt-5 w-full lg:p-10 md:border border">
@@ -222,10 +221,12 @@ export default function RegisterForm({ onSubmit }) {
     <Link href="/privacypolicy">privacy policy</Link>
   </label>
 </div>
+{errors.allFields && <div className="error">{errors.allFields}</div>}
+
   <button type="submit" className="cta-btn mt-5 mx-auto w-5">
           Register
         </button>
-        {showModal && <Modal closeModal={closeModal} />}
+       
         </form>
         <span className="relative z-5 top-[-4rem] lg:left-[-6rem]">
           <Image
