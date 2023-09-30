@@ -31,8 +31,7 @@ export default function PartnersSection() {
           </div>
           <p className="hr-line lg:h-28 h-8 lg:w-1 w-[1.5px] bg-dark-purple"></p>
         </div>
-        {/*  */}
-        <div className="partnerImg">
+       <div className="partnerImg">
           <div className="eachImg lg:border-b-4 border-b-[2px]">
             <Image
               src="/assets/Liberty company logo white.svg"
@@ -43,8 +42,7 @@ export default function PartnersSection() {
           </div>
           <p className="hr-line lg:h-28 h-8 lg:w-1 w-[1.5px] bg-dark-purple"></p>
         </div>
-        {/*  */}
-        <div className="partnerImg">
+       <div className="partnerImg">
           <div className="eachImg lg:border-b-4 border-b-[2px]">
             <Image
               src="/assets/Winwise logo White colour 1.svg"

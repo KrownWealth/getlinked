@@ -94,7 +94,6 @@ button.cta-register {
 }
 .close-btn button,
 .direct-arrow button{
-  margin-top:6.5rem;
   font-size:1.5rem;
   border-radius: 50px;
   background: var(--dark-purple);
@@ -107,7 +106,6 @@ button.cta-register {
 
 
 .direct-arrow {
-  margin-top: 0;
   top: -100px;
   
 }

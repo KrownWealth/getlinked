@@ -62,7 +62,7 @@ export default function Header() {
       {isMobileMenuOpen && <div className="overlay" onClick={closeMobileMenu} />}
 
       {isMobileMenuOpen && (
-        <div className="fixed top-[20%] right-0 w-[90%] sidebar text-white shadow-lg z-50">
+        <div className="fixed top-[12%] right-0 w-[90%] sidebar text-white shadow-lg z-50">
           <div className="flex justify-end close-btn p-5">
             <button onClick={closeMobileMenu}>
               <FaRegTimesCircle className="font-bold text-white" />
