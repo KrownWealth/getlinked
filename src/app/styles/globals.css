@@ -477,16 +477,44 @@ p.features-text{
  border-image-slice: 1;
   padding: 20px;
 }
-/* .partner-box{
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 
-} */
+
+/*====================
+Partner
+========================*/
+
+.partner-box{
+  @apply grid grid-cols-3 flex-wrap lg:w-[50rem] w-full lg:gap-6 gap-y-4 gap-x-0 m-auto lg:p-14 p-5 
+}
+
+
 
 .partnerImg{
+  @apply flex lg:space-x-8 space-x-6
+}
+
+.eachImg{
+@apply  relative  lg:p-3 lg:px-6 lg:pr-0 lg:w-40 lg:h-36 h-10 w-12 flex justify-center items-center pb-1
 
 }
+.eachImg{
+ 
+  border-color: var(--light-purple);
+}
+.eachImg img{
+  @apply lg:w-max w-8
+}
+
+.eachImg:nth-of-type(4),
+.eachImg:nth-of-type(5),
+.eachImg:nth-of-type(6){
+  @apply border-b-0 hidden
+}
+
+.partnerImg .hr-line{
+  background: var(--light-purple);
+} 
+
 
 /*Back to Top*/
 .back-to-top {
